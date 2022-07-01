@@ -1,4 +1,10 @@
 /* Write your CSS Here. */
+body {
+    background-color: rgb(210, 247, 210);
+    overflow: hidden;
+    margin: 10px;
+}
+
 .animals {
     display: block;
     margin-left: auto;
@@ -10,21 +16,27 @@ img {
     width: 500px;
     height: 500px;
     object-fit: cover;
+    margin: 0;
+    padding: 10px;
+    border: 10px double gray;
 }
 
 button {
-    background-color: blue;
-    border: none;
-    color: white;
+    float: right;
+    background-color: rgb(95, 95, 222);
+    border: solid 1px black;
+    border-radius: 5px;
+    color: aliceblue;
     padding: 18px 40px;
     text-align: center;
     display: inline;
     font-size: 16px;
-    transition-duration: 0.4s;
+    transition-duration: 0.5s;
 }
 
 button:hover {
     background-color: aliceblue;
-    color: blue;
-    border: solid thin black;
+    color: rgb(95, 95, 222);
+    border: solid 1px black;
+    border-radius: 5px;
 }
