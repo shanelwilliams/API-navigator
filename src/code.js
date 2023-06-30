@@ -12,11 +12,13 @@ let options = {
   timeout: 5000,
   maximumAge: 0
 }
+console.log(apiKey)
 
 function success(pos) {
   loc.lat = pos.coords.latitude
   loc.lon = pos.coords.longitude
-  let img_url = `https://shrouded-mountain-15003.herokuapp.com/https://flickr.com/services/rest/?api_key=${apiKey}&format=json&nojsoncallback=1&method=flickr.photos.search&safe_search=1&per_page=5&${loc.lat}&${loc.lon}&text=birds`
+
+  let img_url = `https://api.flickr.com/services/rest/?api_key=${apiKey}&format=json&nojsoncallback=1&method=flickr.photos.search&safe_search=1&per_page=5&${loc.lat}&${loc.lon}&text=mountains`
   fetch(img_url)
     .then(response => response.json())
     .then(data => renderImage(data.photos.photo))
@@ -33,7 +35,7 @@ function renderImage(photoList) {
   console.log(imageUrl)
   let image = document.createElement('img')
   image.src = imageUrl
-  image.classList.add('animals')
+  image.classList.add('pictures')
   let button = document.createElement('button')
   button.innerText = 'Next'
   main.append(image, button)
@@ -41,7 +43,7 @@ function renderImage(photoList) {
 }
 
 function nextPhoto() {
-  const image = document.querySelector('.animals')
+  const image = document.querySelector('.pictures')
   if (index >= photoArray.length - 1) {
     index = 0
   } else {
@@ -55,4 +57,5 @@ function constructImageURL(photoObj) {
     ".staticflickr.com/" + photoObj.server +
     "/" + photoObj.id + "_" + photoObj.secret + ".jpg";
 }
+
 

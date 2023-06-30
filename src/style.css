@@ -1,11 +1,11 @@
 /* Write your CSS Here. */
 body {
-    background-color: rgb(210, 247, 210);
+    background-color: lightgray;
     overflow: hidden;
     margin: 10px;
 }
 
-.animals {
+.pictures {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -32,6 +32,7 @@ button {
     display: inline;
     font-size: 16px;
     transition-duration: 0.5s;
+    margin-right: 10rem;
 }
 
 button:hover {
